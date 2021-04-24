@@ -6,8 +6,8 @@ const Cart = ({ cart, subtotal, tax }) => {
     <section>
       <h2>Cart</h2>
       <ul className="Cart">
-        {cart.map(product => {
-            const {name, price, id} = product
+        {cart.map((product) => {
+          const { name, price, id } = product;
           return (
             <li key={id}>
               {product.name}: {formatPrice(product.price)}

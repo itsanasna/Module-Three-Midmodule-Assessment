@@ -16,13 +16,13 @@ class App extends React.Component {
     const { cart } = this.state;
     const subtotal = cart.reduce((sum, product) => sum + product.price, 0);
     const tax = (5 / 100) * subtotal;
+    const total = subtotal + tax;
     return (
       <div>
         <section>
-        <Inventory addProduct={this.addProduct} />
-        <Cart cart={cart} subtotal={subtotal || 0} tax={tax}  />
-        <CheckOut total={subtotal + tax} />
-
+          <Inventory addProduct={this.addProduct} />
+          <Cart cart={cart} subtotal={subtotal || 0} tax={tax} />
+          <CheckOut total={total} />
         </section>
       </div>
     );
